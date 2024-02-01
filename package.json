@@ -1,0 +1,28 @@
+{
+  "name": "footedge",
+  "version": "1.0.0",
+  "description": "server for footedge video conferencing",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/suyious/footedge"
+  },
+  "keywords": [
+    "server",
+    "node",
+    "videocall"
+  ],
+  "author": "github.com/suyious",
+  "license": "ISC",
+  "dependencies": {
+    "socket.io": "^4.7.4"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.3"
+  }
+}
