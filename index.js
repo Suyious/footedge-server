@@ -32,4 +32,12 @@ io.on("connection", (socket) => {
         console.log("ans for", id, ans);
         io.to(id).emit("ans:received", { user: socket.id, ans });
     })
+
+    socket.on("peer:negotiation:needed", ({ offer, id }) => {
+        io.to(id).emit("peer:negotiation:needed:received", { offer, user: socket.id });
+    })
+
+    socket.on("peer:negotiation:done", ({id, ans}) => {
+        io.to(id).emit("peer:negotiation:done:received", { ans, user: socket.id });
+    })
 })
