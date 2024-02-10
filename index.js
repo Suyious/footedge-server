@@ -22,4 +22,14 @@ io.on("connection", (socket) => {
 
         console.log(`User ${socket.id}: ${username} entered room ${room}`);
     })
+
+    socket.on("offer:incoming", ({ id, offer }) => {
+        console.log("offer for", id, offer);
+        io.to(id).emit("offer:received", { user: socket.id, offer });
+    })
+
+    socket.on("ans:incoming", ({ id, ans }) => {
+        console.log("ans for", id, ans);
+        io.to(id).emit("ans:received", { user: socket.id, ans });
+    })
 })
